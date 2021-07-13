@@ -45,7 +45,6 @@ public class SnakeandLadder {
 				else 
 				{
 					System.out.println("*****\nwinning psition = "+currentPosition+"\n********");
-					
 					i=1;
 				}
 				}
@@ -63,7 +62,6 @@ public class SnakeandLadder {
 		}
 		}
 		
-		System.out.println("*****\nwinning psition = 100"+"\n********");
 		System.out.println("\ndice rolled "+count+" times");
 	}
 
