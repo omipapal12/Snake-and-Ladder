@@ -6,6 +6,9 @@ public class SnakeandLadder {
 	public static void main(String[] args) {
 		System.out.println("Welcome");
 		
+		int i=0;
+		
+		int count=0;
 		int currentPosition =0;
 		System.out.println("Initial Position is "+currentPosition);
 		
@@ -15,14 +18,13 @@ public class SnakeandLadder {
 		
 		
 		
-		while(currentPosition <= 100) {
+		while(currentPosition <= 100 && i==0) {
 			
 			die = (int) Math.floor(Math.random()*10)%6+1;
 			System.out.println("die is "+die);
+			count++;
 			
-			if(currentPosition>=100) {
-				System.out.println("*****\nwinning psition = "+currentPosition+"\n********");
-			}
+			
 			
 			option = (int) Math.floor(Math.random()*10)%3;
 			
@@ -35,6 +37,18 @@ public class SnakeandLadder {
 		case ladder:
 			currentPosition = currentPosition + die;
 			System.out.println("(Ladder) Goes Ahead by " + die +" Position is = "+currentPosition);
+			
+			if(currentPosition>=100) {
+				if(currentPosition > 100) {
+					currentPosition = currentPosition - die;
+				}
+				else 
+				{
+					System.out.println("*****\nwinning psition = "+currentPosition+"\n********");
+					
+					i=1;
+				}
+				}
 			
 			break;
 		case snake:
@@ -49,7 +63,9 @@ public class SnakeandLadder {
 		}
 		}
 		
-	
+		System.out.println("*****\nwinning psition = 100"+"\n********");
+		System.out.println("\ndice rolled "+count+" times");
 	}
+
 }
 	
