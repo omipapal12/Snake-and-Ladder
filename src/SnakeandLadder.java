@@ -8,14 +8,24 @@ public class SnakeandLadder {
 		
 		int currentPosition =0;
 		System.out.println("Initial Position is "+currentPosition);
-
-		int die = (int) Math.floor(Math.random()*10)%6+1;
-		System.out.println("die is "+die);
-	
-int option = (int) Math.floor(Math.random()*10)%3;
 		
-
+		int die;
 		
+		int option;
+		
+		
+		
+		while(currentPosition <= 100) {
+			
+			die = (int) Math.floor(Math.random()*10)%6+1;
+			System.out.println("die is "+die);
+			
+			if(currentPosition>=100) {
+				System.out.println("*****\nwinning psition = "+currentPosition+"\n********");
+			}
+			
+			option = (int) Math.floor(Math.random()*10)%3;
+			
 		switch(option)
 		{
 		case noPlay:
@@ -24,17 +34,22 @@ int option = (int) Math.floor(Math.random()*10)%3;
 			break;
 		case ladder:
 			currentPosition = currentPosition + die;
-			System.out.println("Goes Ahead by " + die +" Position is = "+currentPosition);
+			System.out.println("(Ladder) Goes Ahead by " + die +" Position is = "+currentPosition);
 			
 			break;
 		case snake:
 			currentPosition = currentPosition - die;
-			System.out.println("Goes Behind by "+ die + " Position is = "+currentPosition);
-			
+			if(currentPosition < 0) {
+			currentPosition=0;
+			}
+			System.out.println("(Snake) Goes Behind by "+ die + " Position is = "+currentPosition);
 			break;
 		default:
 			break;
 		}
+		}
+		
+	
 	}
 }
 	
